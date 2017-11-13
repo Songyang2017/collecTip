@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>colectionTip</title>
+</head>
+<style>
+	@font-face {
+	  font-family: 'iconfont';  /* project id 462445 */
+	  src: url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.eot');
+	  src: url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.eot?#iefix') format('embedded-opentype'),
+	  url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.woff') format('woff'),
+	  url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.ttf') format('truetype'),
+	  url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.svg#iconfont') format('svg');
+	}
+	.iconfont{
+	    font-family:"iconfont" !important;
+	    font-size:16px;font-style:normal;
+	    -webkit-font-smoothing: antialiased;
+	    -webkit-text-stroke-width: 0.2px;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+	.cloctionTip{
+		position: absolute;
+	    left: 50%;
+	    top: 6rem;
+	    width: 5rem;
+	    height: 1.5rem;
+	    line-height: 1.5rem;
+	    margin-left: -2.5rem;
+	    font-size: 0.82rem;
+	    color: #fff;
+	    text-align: center;
+	    border-radius: 0.2rem;
+	    background: #000;
+	    transform: scale3d(0.9, 0.9, 0.9);
+	    opacity: 0;z-index: -1;
+	    transition: all 0.3s;
+	   }
+	.colectionShow{
+ 		 z-index: 10000; transform: scale3d(1, 1, 1); opacity: 1; 
+		}
+
+</style>
+<body>
+	<div id="app">
+			<i class="iconfont shouCang" @click="textChange">&#xe602;</i>	
+			<div class="cloctionTip" :class="{colectionShow:colShow}">{{cloection}}</div>
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+	var app=new Vue({
+		el:"#app",
+		data:{
+			colShow:false,
+			cloectionFlag:false,
+			cloection:"收藏成功"
+		},
+		methods:{
+			textChange:function(){
+				this.colShow=true;
+				if(this.cloectionFlag){
+					this.cloection="收藏取消";
+					this.cloectionFlag=!this.cloectionFlag;
+				}else{
+					this.cloection="收藏成功";
+					this.cloectionFlag=!this.cloectionFlag;
+				}
+				setTimeout(function(){
+					app.colShow=false;
+				},1000)
+			},
+		}
+	})
+</script>
+</body>
+</html>
