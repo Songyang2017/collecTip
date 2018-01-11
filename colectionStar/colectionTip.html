@@ -8,23 +8,8 @@
 	<title>colectionTip</title>
 </head>
 <style>
-	@font-face {
-	  font-family: 'iconfont';  /* project id 462445 */
-	  src: url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.eot');
-	  src: url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.eot?#iefix') format('embedded-opentype'),
-	  url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.woff') format('woff'),
-	  url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.ttf') format('truetype'),
-	  url('http://at.alicdn.com/t/font_462445_luk2lwno03sor.svg#iconfont') format('svg');
-	}
-	.iconfont{
-	    font-family:"iconfont" !important;
-	    font-size:16px;font-style:normal;
-	    -webkit-font-smoothing: antialiased;
-	    -webkit-text-stroke-width: 0.2px;
-	    -moz-osx-font-smoothing: grayscale;
-	}
-	.cloctionTip{
-		position: absolute;
+	  .cloctionTip{
+	    position: absolute;
 	    left: 50%;
 	    top: 6rem;
 	    width: 5rem;
@@ -47,7 +32,7 @@
 </style>
 <body>
 	<div id="app">
-			<i class="iconfont shouCang" @click="textChange">&#xe602;</i>	
+			<p @click='textChange'>点击</p>	
 			<div class="cloctionTip" :class="{colectionShow:colShow}">{{cloection}}</div>
 	</div>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
